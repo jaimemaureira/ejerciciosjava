@@ -5,15 +5,16 @@ package Ateneo;
  *
  * @author Jaime
  * v 1.0 */
-public class Libro {
+public class Libro{
     
-    private String isbn, titulo, autor;
+    private String isbn, titulo; 
+    private Autor autor;
     private int precio;
 
     public Libro() {
     }
 
-    public Libro(String idIsbn, String titulo, String autor, int precio) {
+    public Libro(String idIsbn, String titulo, Autor autor, int precio) {
         this.isbn = idIsbn;
         this.titulo = titulo;
         this.autor = autor;
@@ -36,11 +37,11 @@ public class Libro {
         this.titulo = titulo;
     }
 
-    public String getAutor() {
+    public Autor getAutor() {
         return autor;
     }
 
-    public void setAutor(String autor) {
+    public void setAutor(Autor autor) {
         this.autor = autor;
     }
 
@@ -74,5 +75,13 @@ public class Libro {
         return this.precio * total;
     }
     
-  
+    public void imprimirInfoLibroOferta(){
+        System.out.println("\t------Libros en oferta------\n");
+        System.out.println("ISBN:\t\t\t" + " " + getIdIsbn());
+        System.out.println("Titulo:\t\t\t" + " " + getTitulo());
+        System.out.println("Autor:" + " " + getAutor());
+        System.out.println("Precio:\t\t\t" + " " + getPrecio());
+        System.out.println("El IVA es de:\t\t" + " " + this.calcularIVA());
+        System.out.println("El precio Total es:\t" + " " + this.totalPrecioIVA() + "\n");
+        }
 }
