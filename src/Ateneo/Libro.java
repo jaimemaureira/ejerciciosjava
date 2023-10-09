@@ -7,25 +7,25 @@ package Ateneo;
  * v 1.0 */
 public class Libro {
     
-    private String Isbn, titulo, autor;
+    private String isbn, titulo, autor;
     private int precio;
 
     public Libro() {
     }
 
     public Libro(String idIsbn, String titulo, String autor, int precio) {
-        this.Isbn = idIsbn;
+        this.isbn = idIsbn;
         this.titulo = titulo;
         this.autor = autor;
         this.precio = precio;
     }
 
     public String getIdIsbn() {
-        return Isbn;
+        return isbn;
     }
 
     public void setIdIsbn(String idIsbn) {
-        this.Isbn = idIsbn;
+        this.isbn = idIsbn;
     }
 
     public String getTitulo() {
@@ -54,9 +54,25 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Catalogo{" + "Isbn=" + Isbn + ", titulo=" + titulo + ", autor=" + autor + ", precio=" + precio + '}';
+        return "Catalogo{" + "Isbn=" + isbn + ", titulo=" + titulo + ", autor=" + autor + ", precio=" + precio + '}';
     }
     
+    // metodos custom
+    
+    public double calcularIVA (){
+        
+        double IVA = 0.19;
+        
+        return this.precio * IVA;
+        
+    }
+    
+    public double totalPrecioIVA(){
+        
+        double total =  1.19;
+        
+        return this.precio * total;
+    }
     
   
 }
